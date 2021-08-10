@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New/film.uz</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h2>FILM.uz</h2>
+            <form action="">
+                <select class="qudrat" name="" id="ddlFruits">
+                    <optgroup class="select-manzil">
+                        <option value="all" selected>All</option>
+                    </optgroup>
+                </select>
+                <input class="input" placeholder="Search" type="text">
+                <select class="alfabit" name="" id="">
+                    <optgroup>
+                        <option selected >select</option>
+                        <option value="a-z">Aa-Zz</option>
+                        <option value="z-a">Zz-Aa</option>
+                        <option value="o-n">Old-New</option>
+                        <option value="n-o">New-Old</option>
+                    </optgroup>
+                </select>
+                <button class="button">search</button>
+            </form>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="list-wrapper">
+            </div>
+            <div id="pagination-container"></div>
+        </div>
+        <div class="modal">
+            <div class="rasmli-qism">
+                <img class="modal-img" src="" alt="">
+                <button class="button smotret">СМОТРЕТЬ (NO TAS-IX)</button>
+                <button class="button smotret">СМОТРЕТЬ TAS-IX</button>
+                <button class="button skachat">СКАЧАТЬ (NO TAS-IX)</button>
+                <button class="button skachat">СКАЧАТЬ (TAS-IX)</button>
+            </div>
+            <div class="text-qisim">
+                <h1 class="title-h1">ANNA</h1>
+                <p class="text-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat assumenda perspiciatis quos animi minus natus, eius earum minima mollitia omnis, expedita praesentium. Quod, ea quae asperiores accusantium sed iste soluta!</p>
+                <p class="janr">Janr: <span class="text-janr">action </span> Sana: <span class="text-data"> 01.01.2019</span></p>
+            </div>
+            <div>
+                <button class="close-button">&times;</button>
+            </div>
+        </div>
+    </main>
+<script src="./JS/films.js"></script>
+<script src="./JS/index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery.simplePagination.min.js"></script>
+
+<script>
+    let items = $('.list-wrapper .list-item');
+    let numItems = items.length;
+    let perPage = 8;
+
+    items.slice(perPage).hide();
+
+    $('#pagination-container').pagination({
+        items: numItems,
+        itemsOnPage: perPage,
+        prevText: "<",
+        nextText: ">",
+        onPageClick: function (pageNumber){
+            let showFrom = perPage * (pageNumber -1);
+            let showTo = showFrom + perPage;
+            items.hide().slice(showFrom, showTo).show();
+        }
+    })
+</script>
+</body>
+</html>
