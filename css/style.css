@@ -187,8 +187,33 @@ body {
     background-color:rgb(0, 0, 0, .9);
 }
 .modal--active {
-    animation: paydobolish 0.5s;
+    animation: identifier 3s;
     display: flex;
+}
+@keyframes identifier {
+    0% {
+        opacity: 0.5;
+        transform: translate3d(0, -500px, 0)
+                                rotateX(130deg);
+        }
+        
+        60% {
+        transform: translate3d(0, 0px, 0);
+        }
+        
+        75% {
+        transform: translate3d(0, 0px, 0);
+        }
+        
+        90% {
+        transform: translate3d(0, 0px, 0);
+        }
+        
+        100% {
+            opacity: 1;
+            transform: none;
+            transform: rotateX(0deg);
+        }
 }
 .rasmli-qism {
     padding: 10px 20px 20px 20px;
@@ -197,14 +222,6 @@ body {
 .modal-img {
     width: 300px;
     height: 400px;
-}
-@keyframes paydobolish {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0.9;
-    }
 }
 
 .rasmli-qism .button {
@@ -230,7 +247,7 @@ body {
     font-size: 25px;
     justify-content: justify;
     margin: 10px 0;
-    width: 700px;
+    width: 60%;
 }
 .janr {
     font-size: 20px;
