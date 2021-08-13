@@ -29,11 +29,16 @@ for (let i =0; i < films.length; i++){
     <span aria-hidden class="cybr-btn__glitch">Buttons_</span>`
     content.appendChild(img)
     content.appendChild(title)
-    content.appendChild(newbutton)   
+    content.appendChild(newbutton)
+    list_item.style.zIndex = `2`   
     list_item.appendChild(content)
     bigmanzil.appendChild(list_item)
     newbutton.addEventListener(`click`, (e) => {
         modal.classList.add(`modal--active`)
+        setTimeout(() => {
+            myVideo.style.display = `block`
+            myVideo.play()
+        }, 1000)
         let filmid = e.target.dataset.uuid
         let x = films.find((e) => filmid == e.id)
         modalImg.innerHTML = null
@@ -73,6 +78,7 @@ let closebuton = document.querySelector(`.close-button`)
 closebuton.addEventListener(`click`, close)
 function close(){
     modal.classList.remove(`modal--active`)
+    myVideo.pause()
 }
 
 let elForm = document.querySelector(`form`)

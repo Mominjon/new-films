@@ -1,12 +1,27 @@
 body {
     font-family: sans-serif;
-    background: #222;
-    height: 100vh;
     display: block;
     align-items: center;
     justify-content: center;
+    
 }
-
+#mybody {
+  display: block;
+  position:fixed;
+  z-index: -5;
+  width: 100%;
+}
+#myVideo {
+  z-index: 0;
+  top: -200px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 1000px;
+}
 li {
     list-style: none;
 }
@@ -25,9 +40,10 @@ a {
 }
 
 header {
-    background-color: rgb(146, 146, 146);
+    background-color: inherit;
     width: 100%;
     margin-top: -0px;
+    z-index: 2;
 }
 nav {
     display: flex;
@@ -217,8 +233,10 @@ body {
         }
 }
 .rasmli-qism {
+  background-color: rgba(73, 72, 72, 0.5) ;
     padding: 10px 20px 20px 20px;
     display: block;
+    z-index: 7;
 }
 .modal-img {
     width: 300px;
@@ -239,10 +257,12 @@ body {
     background-color:rgb(32, 214, 26)
 }
 .text-qisim {
+    padding: 10px;
     color: #fff;
-    margin: 20px;
-    margin-top: 100px;
+    margin: 10px;
+    margin-top: 50px;
     margin-left: 5%;
+    z-index: 7;
 }
 .text-p {
     font-size: 25px;
@@ -252,6 +272,7 @@ body {
 }
 .janr {
     font-size: 20px;
+    z-index: 7;
 }
 .text-janr {
     margin-right: 20px;
