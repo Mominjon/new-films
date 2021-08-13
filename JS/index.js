@@ -15,7 +15,7 @@ for (let i =0; i < films.length; i++){
     let img = document.createElement(`img`)
     let title = document.createElement(`h3`)
     let newbutton = document.createElement(`button`)
-    newbutton.textContent = `Malumot`
+    
     img.setAttribute(`src`, `${films[i].poster}`)
     title.textContent = `${films[i].title}`
     title.classList.add(`title`)
@@ -24,6 +24,9 @@ for (let i =0; i < films.length; i++){
     content.classList.add(`content`)
     newbutton.dataset.uuid = films[i].id
     newbutton.classList.add(`newbutton2`)
+    newbutton.classList.add(`cybr-btn`)
+    newbutton.innerHTML = `BUTTON <span aria-hidden>_</span>
+    <span aria-hidden class="cybr-btn__glitch">Buttons_</span>`
     content.appendChild(img)
     content.appendChild(title)
     content.appendChild(newbutton)   
